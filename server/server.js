@@ -4,6 +4,8 @@ import favicon from 'serve-favicon'
 import dotenv from 'dotenv'
 
 // import the router from your routes file
+import pcsRouter from './routes/pcs.js'
+import optionsRouter from './routes/pcOptions.js'
 
 
 dotenv.config()
@@ -23,6 +25,8 @@ else if (process.env.NODE_ENV === 'production') {
 }
 
 // specify the api path for the server to use
+app.use('/api/pcs', pcsRouter)
+app.use('/api/options', optionsRouter)
 
 
 if (process.env.NODE_ENV === 'production') {
