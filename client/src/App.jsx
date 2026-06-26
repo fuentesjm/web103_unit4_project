@@ -1,29 +1,29 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import Navigation from './components/Navigation'
-import ViewCars from './pages/ViewCars'
-import EditCar from './pages/EditCar'
-import CreateCar from './pages/CreateCar'
-import CarDetails from './pages/CarDetails'
+import ViewPCs from './pages/ViewPCs'
+import EditPC from './pages/EditPC'
+import CreatePC from './pages/CreatePC'
+import PCDetails from './pages/PCDetails'
 import './App.css'
 
 const App = () => {
   let element = useRoutes([
     {
       path: '/',
-      element: <CreateCar title='BOLT BUCKET | Customize' />
+      element: <CreatePC title='RIG BUILDER | Customize' />
     },
     {
-      path:'/customcars',
-      element: <ViewCars title='BOLT BUCKET | Custom Cars' />
+      path: '/pcs',
+      element: <ViewPCs title='RIG BUILDER | My Builds' />
     },
     {
-      path: '/customcars/:id',
-      element: <CarDetails title='BOLT BUCKET | View' />
+      path: '/pcs/:id',
+      element: <PCDetails title='RIG BUILDER | View' />
     },
     {
       path: '/edit/:id',
-      element: <EditCar title='BOLT BUCKET | Edit' />
+      element: <EditPC title='RIG BUILDER | Edit' />
     }
   ])
 
